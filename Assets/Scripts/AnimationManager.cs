@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void Curtains()
     {
-        
+        //add the opening and end curtains
     }
 
-    // Update is called once per frame
-    void Update()
+    void Kick()
     {
-        
+        //if wrong answer, comedian kicks stuff in face
+    }
+
+    void DissapointmentObjects()
+    {
+        //boos and audience throwing shit in the commedians face
+    }
+
+    void AppreciationObjects()
+    {
+        //applause and roses and other shit
+    }
+
+    void SpeachBubbles()
+    {
+        //speachbubbles have slight animation to make them less statik
     }
 }
