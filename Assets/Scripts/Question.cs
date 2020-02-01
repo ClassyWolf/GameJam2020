@@ -6,8 +6,7 @@ using UnityEngine;
 public class Question : ScriptableObject
 {
     public string joke;
-    public string rightAnswer;
+    public string correctAnswer;
     public string wrongAnswer_1;
     public string wrongAnswer_2;
-    public string wrongAnswer_3;
 }

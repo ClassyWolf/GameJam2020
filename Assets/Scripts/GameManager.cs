@@ -4,39 +4,122 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private ScriptableObject[] questionPool;
-    [SerializeField] private int victoryPoints = 3;
+    [SerializeField] private UIController uiController;
+    [SerializeField] private AnimationManager animationManager;
+    [SerializeField] private Question[] questionPool;
     [SerializeField] private int defeatThreshhold = 3;
-    [HideInInspector] public int correct = 0;
     [HideInInspector] public int wrong = 0;
 
-    private string[] answers = new string[4];
+    private string[] answers = new string[3];
+    private string[] randomizedAnswers = new string[3];
+    private int[] randomQuestionsIndex;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int maxQuestions = 10;
+    private int questionIndex = 0;
+
+    private bool failed = false;
+    private bool answered = false;
+
+
+
+    private void Start()
     {
-        
+        randomQuestionsIndex = new int[maxQuestions - 1];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(correct == victoryPoints)
-        {
-            Debug.Log("YOU WIN");
-        }
-        if(wrong == defeatThreshhold)
-        {
-            Debug.Log("YOU SUCK!!1!!11!");
-        }
-    }
 
-    void ReducePoints()
+    private void ReducePoints()
     {
         wrong++;
+        if (wrong == defeatThreshhold)
+        {
+            failed = true;
+        }
     }
-    void AddPoints()
+
+
+    private void MakeAnwserArray()
     {
-        correct++;
+        answers[0] = questionPool[questionIndex].correctAnswer;
+        answers[1] = questionPool[questionIndex].wrongAnswer_1;
+        answers[2] = questionPool[questionIndex].wrongAnswer_2;
+    }
+
+
+    private void RandomizeAnswers()
+    {
+        MakeAnwserArray();
+        //Randomize
+    }
+
+
+    private void RandomizeQuestions()
+    {
+        // Randomize
+
+
+
+
+        RandomizeAnswers();
+    }
+
+
+    public void CheckAnswer()
+    {
+        if (GetComponentInChildren<TMPro.TextMeshProUGUI>().text == questionPool[randomQuestionsIndex[questionIndex]].correctAnswer)
+        {
+            // Play animation
+        }
+        else
+        {
+            // Play animation
+            ReducePoints();
+        }
+        answered = true;
+    }
+
+
+    private IEnumerator StartGameSession()
+    {
+        ResetGame();
+        // Curtain comes animation
+        while (questionIndex < maxQuestions && failed == false)
+        {
+            RandomizeAnswers();
+            uiController.SetQuizText(questionPool[randomQuestionsIndex[questionIndex]].joke, randomizedAnswers[0], randomizedAnswers[1], randomizedAnswers[2]);
+            while (answered == false)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            // Wait x second, depends on animation duration
+            yield return new WaitForSeconds(1);
+            questionIndex = questionIndex + 1;
+            answered = false;
+        }
+        // play ending animation, enable main menu
+        // Wait x second, depends on animation duration
+        yield return new WaitForSeconds(1);
+
+    }
+
+
+    private void ResetGame()
+    {
+        questionIndex = 0;
+        failed = false;
+        wrong = 0;
+    }
+
+
+    public void PlayGame()
+    {
+        StartCoroutine(StartGameSession());
+    }
+
+
+    public void EndGame()
+    {
+        // Play animation, enable main menu
+        StopCoroutine(StartGameSession());
     }
 }
