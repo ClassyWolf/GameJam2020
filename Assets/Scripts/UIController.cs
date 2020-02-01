@@ -18,9 +18,10 @@ public class UIController : MonoBehaviour
 
     void Intro()
     {
-        gM.currentPoints = 0;
+        gM.correct = 0;
+        gM.wrong = 0;
 
-        for(int i = 0; i <= startScene.Length; i++)
+        for (int i = 0; i <= startScene.Length; i++)
             startScene[i].SetActive(true);
 
         for (int i = 0; i <= scene.Length; i++)

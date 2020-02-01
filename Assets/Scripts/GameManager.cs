@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private ScriptableObject[] questionPool;
     [SerializeField] private int victoryPoints = 3;
-    [SerializeField] private int defeatThreshhold = -3;
-    [HideInInspector] public int currentPoints;
+    [SerializeField] private int defeatThreshhold = 3;
+    [HideInInspector] public int correct = 0;
+    [HideInInspector] public int wrong = 0;
+
     private string[] answers = new string[4];
 
     // Start is called before the first frame update
@@ -19,11 +21,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentPoints == victoryPoints)
+        if(correct == victoryPoints)
         {
             Debug.Log("YOU WIN");
         }
-        if(currentPoints == defeatThreshhold)
+        if(wrong == defeatThreshhold)
         {
             Debug.Log("YOU SUCK!!1!!11!");
         }
@@ -31,10 +33,10 @@ public class GameManager : MonoBehaviour
 
     void ReducePoints()
     {
-        currentPoints--;
+        wrong++;
     }
     void AddPoints()
     {
-        currentPoints++;
+        correct++;
     }
 }
