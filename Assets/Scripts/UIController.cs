@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     [SerializeField] AnimationManager aniManager;
+    [SerializeField] GameManager gM;
     [SerializeField] GameObject[] startScene;
     [SerializeField] GameObject[] scene;
     [SerializeField] GameObject[] endScene;
@@ -17,6 +18,8 @@ public class UIController : MonoBehaviour
 
     void Intro()
     {
+        gM.currentPoints = 0;
+
         for(int i = 0; i <= startScene.Length; i++)
             startScene[i].SetActive(true);
 

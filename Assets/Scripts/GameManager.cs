@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScriptableObject[] questionPool;
     [SerializeField] private int victoryPoints = 3;
     [SerializeField] private int defeatThreshhold = -3;
-    private int currentPoints;
+    [HideInInspector] public int currentPoints;
     private string[] answers = new string[4];
 
     // Start is called before the first frame update
