@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public AudioInfo[] audioClip;
     public static AudioManager instance = null;
     private float volume = 0.5f;
+    public bool mute = false;
 
     public float Volume
     {
@@ -40,6 +41,33 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Update()
+    {
+        if(mute == true)
+        {
+            int i = 0;
+            foreach (AudioInfo sound in audioClip)
+            {
+                audioClip[i].source.Stop();
+                i++;
+            }
+        }
+    }
+
+
+    public void MuteSound()
+    {
+        if (mute == true)
+        {
+            mute = false;
+        }
+        else
+        {
+            mute = true;
+        }
+    }
+
 
     //void OnEnable()
     //{

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private UIController uiController;
     [SerializeField] private AnimationManager animationManager;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Question[] questionPool;
     [SerializeField] private int defeatThreshhold = 3;
     [HideInInspector] public int wrong = 0;
@@ -25,10 +26,12 @@ public class GameManager : MonoBehaviour
 
     private List<string> questions;
 
+
+
     private void Start()
     {
+        //star animition
         randomQuestionsIndex = new int[maxQuestions - 1];
-        
     }
 
 
@@ -96,7 +99,7 @@ public class GameManager : MonoBehaviour
             }
             if (setValue == true)
             {
-                questions.Add((questionPool[rng]).ToString());
+                questions.Add((questionPool[rng]).joke);
                 randomQuestionsIndex[counter] = rng;
                 counter++;
             }
@@ -164,5 +167,19 @@ public class GameManager : MonoBehaviour
     {
         // Play animation, enable main menu
         StopCoroutine(StartGameSession());
+    }
+
+
+    private IEnumerator Quitting()
+    {
+        // Start animation
+        yield return new WaitForSeconds(1);
+        Application.Quit();
+    }
+
+
+    public void QuitGame()
+    {
+        StartCoroutine(Quitting());
     }
 }

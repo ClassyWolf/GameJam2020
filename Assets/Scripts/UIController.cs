@@ -16,8 +16,9 @@ public class UIController : MonoBehaviour
     [SerializeField] TextMeshProUGUI answerButtonText_1;
     [SerializeField] TextMeshProUGUI answerButtonText_2;
     [SerializeField] TextMeshProUGUI answerButtonText_3;
-    [SerializeField] TextMeshProUGUI answerButtonText_4;
     [SerializeField] private GameObject[] answerButtons;
+
+    [SerializeField] private TextMeshProUGUI endingText;
 
 
     void Intro()
