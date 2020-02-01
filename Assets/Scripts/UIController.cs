@@ -17,15 +17,7 @@ public class UIController : MonoBehaviour
     [SerializeField] TextMeshProUGUI answerButtonText_2;
     [SerializeField] TextMeshProUGUI answerButtonText_3;
     [SerializeField] TextMeshProUGUI answerButtonText_4;
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject[] answerButtons;
 
 
     void Intro()
@@ -75,10 +67,25 @@ public class UIController : MonoBehaviour
 
     public void SetQuizText(string joke, string answer_1, string answer_2, string answer_3)
     {
-        jokeText.text = joke;
+        foreach (var button in answerButtons)
+        {
+            button.SetActive(true);
+        }
+
+        jokeText.text = joke + " __________";
         answerButtonText_1.text = answer_1;
         answerButtonText_2.text = answer_2;
         answerButtonText_3.text = answer_3;
     }
 
+
+    public void FillQuiz(string joke, string answer)
+    {
+        foreach (var button in answerButtons)
+        {
+            button.SetActive(false);
+        }
+
+        jokeText.text = joke + " " + answer;
+    }
 }

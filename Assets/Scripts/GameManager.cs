@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     private string[] answers = new string[3];
     private string[] tempAnswers = new string[3];
-    private string[] randomizedAnswers = new string[3];
     private int[] randomQuestionsIndex;
 
     [SerializeField] private int maxQuestions = 10;
@@ -22,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private bool failed = false;
     private bool answered = false;
+    private string tempAnswer;
 
     private List<string> questions;
 
@@ -44,14 +44,15 @@ public class GameManager : MonoBehaviour
 
     private void MakeAnwserArray()
     {
-        tempAnswers[0] = questionPool[questionIndex].correctAnswer;
-        tempAnswers[1] = questionPool[questionIndex].wrongAnswer_1;
-        tempAnswers[2] = questionPool[questionIndex].wrongAnswer_2;
+        tempAnswers[0] = questionPool[randomQuestionsIndex[questionIndex]].correctAnswer;
+        tempAnswers[1] = questionPool[randomQuestionsIndex[questionIndex]].wrongAnswer_1;
+        tempAnswers[2] = questionPool[randomQuestionsIndex[questionIndex]].wrongAnswer_2;
     }
 
 
     private void RandomizeAnswers()
     {
+        //Randomize
         Array.Clear(answers, 0, answers.Length);
         MakeAnwserArray();
         int rng;
@@ -65,7 +66,6 @@ public class GameManager : MonoBehaviour
                 counter++;
             }
         }
-        //Randomize
     }
 
 
@@ -75,6 +75,9 @@ public class GameManager : MonoBehaviour
         int rng;
         int counter = 0;
         bool setValue = false;
+
+        Array.Clear(randomQuestionsIndex, 0 , randomQuestionsIndex.Length);
+
         while(counter < maxQuestions)
         {
             rng = Random.Range(0, maxQuestions);
@@ -98,15 +101,13 @@ public class GameManager : MonoBehaviour
                 counter++;
             }
         }
-
-
-        RandomizeAnswers();
     }
 
 
     public void CheckAnswer()
     {
-        if (GetComponentInChildren<TMPro.TextMeshProUGUI>().text == questionPool[randomQuestionsIndex[questionIndex]].correctAnswer)
+        tempAnswer = GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+        if (tempAnswer == questionPool[randomQuestionsIndex[questionIndex]].correctAnswer)
         {
             // Play animation
         }
@@ -123,14 +124,16 @@ public class GameManager : MonoBehaviour
     {
         ResetGame();
         // Curtain comes animation
+        RandomizeQuestions();
         while (questionIndex < maxQuestions && failed == false)
         {
             RandomizeAnswers();
-            uiController.SetQuizText(questionPool[randomQuestionsIndex[questionIndex]].joke, randomizedAnswers[0], randomizedAnswers[1], randomizedAnswers[2]);
+            uiController.SetQuizText(questionPool[randomQuestionsIndex[questionIndex]].joke, answers[0], answers[1], answers[2]);
             while (answered == false)
             {
                 yield return new WaitForSeconds(1);
             }
+            uiController.FillQuiz(questionPool[randomQuestionsIndex[questionIndex]].joke, tempAnswer);
             // Wait x second, depends on animation duration
             yield return new WaitForSeconds(1);
             questionIndex = questionIndex + 1;
