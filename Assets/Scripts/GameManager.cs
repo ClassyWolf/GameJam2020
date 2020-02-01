@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int wrong = 0;
 
     private string[] answers = new string[3];
+    private string[] tempAnswers = new string[3];
     private string[] randomizedAnswers = new string[3];
     private int[] randomQuestionsIndex;
 
@@ -20,11 +23,12 @@ public class GameManager : MonoBehaviour
     private bool failed = false;
     private bool answered = false;
 
-
+    private List<string> questions;
 
     private void Start()
     {
         randomQuestionsIndex = new int[maxQuestions - 1];
+        
     }
 
 
@@ -40,15 +44,27 @@ public class GameManager : MonoBehaviour
 
     private void MakeAnwserArray()
     {
-        answers[0] = questionPool[questionIndex].correctAnswer;
-        answers[1] = questionPool[questionIndex].wrongAnswer_1;
-        answers[2] = questionPool[questionIndex].wrongAnswer_2;
+        tempAnswers[0] = questionPool[questionIndex].correctAnswer;
+        tempAnswers[1] = questionPool[questionIndex].wrongAnswer_1;
+        tempAnswers[2] = questionPool[questionIndex].wrongAnswer_2;
     }
 
 
     private void RandomizeAnswers()
     {
+        Array.Clear(answers, 0, answers.Length);
         MakeAnwserArray();
+        int rng;
+        int counter = 0;       
+        while(counter < 3)
+        {
+            rng = Random.Range(0, 2);
+            if(answers[rng] == null)
+            {
+                answers[rng] = tempAnswers[counter];
+                counter++;
+            }
+        }
         //Randomize
     }
 
@@ -56,8 +72,32 @@ public class GameManager : MonoBehaviour
     private void RandomizeQuestions()
     {
         // Randomize
+        int rng;
+        int counter = 0;
+        bool setValue = false;
+        while(counter < maxQuestions)
+        {
+            rng = Random.Range(0, maxQuestions);
+            foreach (int item in randomQuestionsIndex)
+            {
+                if(randomQuestionsIndex[item] == rng)
+                {
+                    setValue = false;
+                    break;
+                }
+                else
+                {
+                    setValue = true;
+                }
 
-
+            }
+            if (setValue == true)
+            {
+                questions.Add((questionPool[rng]).ToString());
+                randomQuestionsIndex[counter] = rng;
+                counter++;
+            }
+        }
 
 
         RandomizeAnswers();
