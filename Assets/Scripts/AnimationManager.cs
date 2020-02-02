@@ -7,9 +7,10 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] private Animator curtainAnim;
     [SerializeField] private Animator cheerObjects;
     [SerializeField] private Animator booObjects;
+    [SerializeField] private Animator charcaterAnim;
 
     private bool curtainsOpen = false;
-
+    
 
 
     public void Curtains()
@@ -47,7 +48,7 @@ public class AnimationManager : MonoBehaviour
 
     void Kick()
     {
-        //if wrong answer, comedian kicks stuff in face
+        charcaterAnim.Play("Kicking");
     }
 
     void DissapointmentObjects()
@@ -58,6 +59,7 @@ public class AnimationManager : MonoBehaviour
 
     IEnumerator ThrowBad()
     {
+        Kick();
         booObjects.Play("BooItems");
         yield return new WaitForSeconds(0.50f);
     }
