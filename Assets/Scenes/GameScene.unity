@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583644238526761988, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 68bacfdeac863db449bb5e4b25612f93, type: 2}
     - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -198,6 +203,12 @@ GameObject:
 --- !u!95 &159295986 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1431140671577783253, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &159295988 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3002186193241926466, guid: 27a0e93cfade6964aa5cf592003647c9,
     type: 3}
   m_PrefabInstance: {fileID: 159295984}
   m_PrefabAsset: {fileID: 0}
@@ -328,7 +339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curtainAnim: {fileID: 188203694}
   cheerObjects: {fileID: 159295986}
-  booObjects: {fileID: 0}
+  booObjects: {fileID: 159295988}
+  charcaterAnim: {fileID: 2041528069}
 --- !u!114 &276607384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +382,7 @@ MonoBehaviour:
   wrong: 0
   cheerObjects: {fileID: 1340475126}
   booObjects: {fileID: 159295985}
+  props: {fileID: 1022168876}
   maxQuestions: 10
 --- !u!4 &276607385
 Transform:
@@ -685,6 +698,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2104422988}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1022168876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4470538430635879024, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1281278647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7741351195597916269, guid: 4c01e3aba2191144190a316732a82531,
@@ -738,6 +757,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7741351196755647664, guid: 4c01e3aba2191144190a316732a82531,
     type: 3}
   m_PrefabInstance: {fileID: 2104422988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2041528069 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1583644238526761988, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2104422988
 PrefabInstance:
