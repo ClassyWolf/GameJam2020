@@ -16,9 +16,10 @@ ModelImporter:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
-    optimizeGameObjects: 0
+    optimizeGameObjects: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Hips' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -26,7 +27,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -76,7 +77,207 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: woman01(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GZM_Circle025
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Jaw
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_LoLid
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Tongue
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_UpLid
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Ball025
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Breast_L
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Breast_R
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_CircleChest
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_CircleHips
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_CircleSpine
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_CrownHips
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Cube025
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_FaceHead
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_FaceJaw
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Foot
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_FootIK
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Gaze
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Hand
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_HandIK
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Head
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Knuckle
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Master
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Neck
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_RevFoot
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_RevToe
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Root
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Shoulder
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: GZM_Toe
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: Gamejam2020gamelabfemale:Proxy
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: Gamejam2020gamelabfemale:Body
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: Gamejam2020gamelabfemale:Long01
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: Gamejam2020gamelabfemale:High-poly
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: Gamejam2020gamelabfemale:Eyebrow005
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: Gamejam2020gamelabfemale:Elvs_evening_gown1
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: pupils
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: insidePupils
+      parentName: woman01(Clone)
+      position: {x: 0.01189225, y: 0.0053626234, z: 0.003906546}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 4.006082, y: 4.006082, z: 4.006082}
+    - name: hornLeft
+      parentName: woman01(Clone)
+      position: {x: -0.03287973, y: 1.6933371, z: 0.003906546}
+      rotation: {x: -0.6830127, y: -0.1830127, z: 0.1830127, w: 0.6830127}
+      scale: {x: 0.101754, y: 0.101754, z: 0.101754}
+    - name: hornRight
+      parentName: woman01(Clone)
+      position: {x: 0.05259403, y: 1.6933371, z: 0.003906546}
+      rotation: {x: 0.6830127, y: -0.18301275, z: -0.18301275, w: 0.6830127}
+      scale: {x: -0.101755, y: -0.101754, z: -0.101755}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -87,10 +288,10 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
