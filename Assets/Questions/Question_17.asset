@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
   m_Name: Question_17
   m_EditorClassIdentifier: 
-  joke: 
-  rightAnswer: 
-  wrongAnswer_1: 
-  wrongAnswer_2: 
-  wrongAnswer_3: 
+  joke: How do you make holy water?
+  correctAnswer: You boil the hell out of it.
+  wrongAnswer_1: You bless it.
+  wrongAnswer_2: You ask priest for a help.

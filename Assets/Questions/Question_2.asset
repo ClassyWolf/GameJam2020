@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
   m_Name: Question_2
   m_EditorClassIdentifier: 
-  joke: 
-  rightAnswer: 
-  wrongAnswer_1: 
-  wrongAnswer_2: 
-  wrongAnswer_3: 
+  joke: What did the skeleton say to his rival?
+  correctAnswer: "I\u2019ve got a bone to pick with you."
+  wrongAnswer_1: Adult human has approximately 206 bones.
+  wrongAnswer_2: Nothing.

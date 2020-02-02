@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
-  m_Name: Question_4
+  m_Name: Question_21
   m_EditorClassIdentifier: 
-  joke: I know some pretty good jokes.
-  correctAnswer: Sadly, none of them are beautiful.
-  wrongAnswer_1: You will hear none of them today.
-  wrongAnswer_2: "But you\u2019ve already heard them."
+  joke: How do you know that a cemetery is popular?
+  correctAnswer: People are just dying to get in there.
+  wrongAnswer_1: There are a lot of graves there.
+  wrongAnswer_2: There are lot of zombies there.

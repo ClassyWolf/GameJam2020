@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
   m_Name: Question_10
   m_EditorClassIdentifier: 
-  joke: 
-  rightAnswer: 
-  wrongAnswer_1: 
-  wrongAnswer_2: 
-  wrongAnswer_3: 
+  joke: I found a wallet yesterday with thousand dollars inside it.
+  correctAnswer: "The owner wasn\u2019t very happy I returned it empty."
+  wrongAnswer_1: I returned it to the owner.
+  wrongAnswer_2: I kept it to myself.

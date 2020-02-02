@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
   m_Name: Question_11
   m_EditorClassIdentifier: 
-  joke: 
-  rightAnswer: 
-  wrongAnswer_1: 
-  wrongAnswer_2: 
-  wrongAnswer_3: 
+  joke: "Why doesn\u2019t a pizza joke work?"
+  correctAnswer: "It\u2019s too cheesy."
+  wrongAnswer_1: "There\u2019s pineapple on the pizza."
+  wrongAnswer_2: Too many different fillings.

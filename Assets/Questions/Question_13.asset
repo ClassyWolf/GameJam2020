@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
   m_Name: Question_13
   m_EditorClassIdentifier: 
-  joke: 
-  rightAnswer: 
-  wrongAnswer_1: 
-  wrongAnswer_2: 
-  wrongAnswer_3: 
+  joke: Why did the chicken cross the road?
+  correctAnswer: "To get to \u2018the other side\u2019 ."
+  wrongAnswer_1: To visit the neighbor.
+  wrongAnswer_2: To find a missing egg.

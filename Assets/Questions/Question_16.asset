@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b44dec0aa27894b8f7f137e22b0d15, type: 3}
   m_Name: Question_16
   m_EditorClassIdentifier: 
-  joke: 
-  rightAnswer: 
-  wrongAnswer_1: 
-  wrongAnswer_2: 
-  wrongAnswer_3: 
+  joke: I once went sky diving and a man forgot his parachute.
+  correctAnswer: "He didn\u2019t understand the gravity of the situation."
+  wrongAnswer_1: He died.
+  wrongAnswer_2: But luckily, we stopped him.

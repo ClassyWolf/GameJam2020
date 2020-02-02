@@ -240,6 +240,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f8fbc4d2ebc5332499302d8293159cbc, type: 2}
   - {fileID: 11400000, guid: c91cde483bc92484d8c5fa253035966a, type: 2}
   - {fileID: 11400000, guid: cccb94d2be30ac448876bc36fd2e34c8, type: 2}
+  - {fileID: 11400000, guid: 60a1c82aca927b34084b4875e32142f3, type: 2}
   defeatThreshhold: 3
   wrong: 0
   maxQuestions: 10
