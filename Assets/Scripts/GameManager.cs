@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //star animition
+        animationManager.CurtainOpen();
         randomQuestionsIndex = new int[maxQuestions];
     }
 
@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
         {
             // Play animation
             ReducePoints();
+            uiController.LoseTomatoes();
         }
         answered = true;
     }
@@ -111,30 +112,30 @@ public class GameManager : MonoBehaviour
     private IEnumerator StartGameSession()
     {
         ResetGame();
-        // Curtain comes animation
+        StartCoroutine(ToGameAndMainMenu());
         RandomizeQuestions();
-        //while (questionIndex < maxQuestions && failed == false)
-        //{
+        while (questionIndex < maxQuestions && failed == false)
+        {
             Debug.Log("In loop");
         yield return new WaitForSeconds(1);
             RandomizeAnswers();
             uiController.SetQuizText(questions[questionIndex].joke, answers[0], answers[1], answers[2]);
-        //yield return new WaitUntil(() => answered);
+        yield return new WaitUntil(() => answered);
            uiController.FillQuiz(questions[questionIndex].joke, tempAnswer);
             // Wait x second, depends on animation duration
             yield return new WaitForSeconds(1);
             questionIndex = questionIndex + 1;
             answered = false;
-        //}
+        }
         // play ending animation, enable main menu
-        // Wait x second, depends on animation duration
-        yield return new WaitForSeconds(1);
+        StartCoroutine(GameEnding());
         Debug.Log("Done");
     }
 
 
     private void ResetGame()
     {
+        uiController.ResetTomatotoes();
         questionIndex = 0;
         failed = false;
         wrong = 0;
@@ -150,15 +151,15 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        // Play animation, enable main menu
         StopCoroutine(StartGameSession());
+        StartCoroutine(ToGameAndMainMenu());
     }
 
 
     private IEnumerator Quitting()
     {
-        // Start animation
-        yield return new WaitForSeconds(1);
+        animationManager.CurtainClose();
+        yield return new WaitForSeconds(0.7f);
         Application.Quit();
     }
 
@@ -166,5 +167,41 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         StartCoroutine(Quitting());
+    }
+
+
+    private IEnumerator ToGameAndMainMenu()
+    {
+        animationManager.CurtainClose();
+        yield return new WaitForSeconds(0.7f);
+        uiController.MainMenuPanelState();
+        uiController.GamePanelState();
+        yield return new WaitForSeconds(0.5f);
+        animationManager.CurtainOpen();
+        yield return new WaitForSeconds(0.7f);
+    }
+
+
+    private IEnumerator GameEnding()
+    {
+        // Show ending panel
+        animationManager.CurtainClose();
+        yield return new WaitForSeconds(0.7f);
+        uiController.GamePanelState();
+        uiController.EndGamePanelState();
+        yield return new WaitForSeconds(0.5f);
+        animationManager.CurtainOpen();
+        yield return new WaitForSeconds(0.7f);
+
+        yield return new WaitForSeconds(1f);
+
+        // Back to main
+        animationManager.CurtainClose();
+        yield return new WaitForSeconds(0.7f);
+        uiController.MainMenuPanelState();
+        uiController.EndGamePanelState();
+        yield return new WaitForSeconds(0.5f);
+        animationManager.CurtainOpen();
+        yield return new WaitForSeconds(0.7f);
     }
 }

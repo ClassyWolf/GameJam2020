@@ -20,6 +20,13 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI endingText;
 
+    [SerializeField] private GameObject[] tomateImages;
+    private int tomatoCounter = 0;
+
+
+    [SerializeField] GameObject gamePanel;
+    [SerializeField] GameObject mainmenuPanel;
+    [SerializeField] GameObject endgamePanel;
 
     void Intro()
     {
@@ -88,5 +95,80 @@ public class UIController : MonoBehaviour
         }
 
         jokeText.text = joke + " " + answer;
+    }
+
+
+    private IEnumerator LoseTomato()
+    {
+        tomatoCounter = tomatoCounter + 1;
+
+        yield return new WaitForSeconds(1);
+
+        if (tomatoCounter == 1)
+        {
+            tomateImages[0].SetActive(false);
+        }
+        if (tomatoCounter == 2)
+        {
+            tomateImages[1].SetActive(false);
+        }
+        if (tomatoCounter == 3)
+        {
+            tomateImages[2].SetActive(false);
+        }
+    }
+
+
+    public void LoseTomatoes()
+    {
+        StartCoroutine(LoseTomato());
+    }
+
+
+    public void ResetTomatotoes()
+    {
+        tomatoCounter = 0;
+        tomateImages[0].SetActive(true);
+        tomateImages[1].SetActive(true);
+        tomateImages[2].SetActive(true);
+    }
+
+
+    public void GamePanelState()
+    {
+        if (gamePanel.activeInHierarchy == true)
+        {
+            gamePanel.SetActive(false);
+        }
+        else
+        {
+            gamePanel.SetActive(true);
+        }
+    }
+
+
+    public void MainMenuPanelState()
+    {
+        if (mainmenuPanel.activeInHierarchy == true)
+        {
+            mainmenuPanel.SetActive(false);
+        }
+        else
+        {
+            mainmenuPanel.SetActive(true);
+        }
+    }
+
+
+    public void EndGamePanelState()
+    {
+        if (endgamePanel.activeInHierarchy == true)
+        {
+            endgamePanel.SetActive(false);
+        }
+        else
+        {
+            endgamePanel.SetActive(true);
+        }
     }
 }

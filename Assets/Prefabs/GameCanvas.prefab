@@ -4112,11 +4112,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtains
       objectReference: {fileID: 0}
-    - target: {fileID: 2698126278800909920, guid: 3ad54bc0903110742b60069e5c0d59b6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2698126278800909921, guid: 3ad54bc0903110742b60069e5c0d59b6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4221,6 +4216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2698126278800909926, guid: 3ad54bc0903110742b60069e5c0d59b6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ad54bc0903110742b60069e5c0d59b6, type: 3}
