@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -120,6 +120,87 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &159295984
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9905335
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.1372717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 164.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020818, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470538431302020819, guid: 27a0e93cfade6964aa5cf592003647c9,
+        type: 3}
+      propertyPath: m_Name
+      value: Props
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27a0e93cfade6964aa5cf592003647c9, type: 3}
+--- !u!1 &159295985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8181538925706631159, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &159295986 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1431140671577783253, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &188203694 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5629330672456604903, guid: 4c01e3aba2191144190a316732a82531,
@@ -206,7 +287,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5a3cce65f04944e96dd33844bf8542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: []
+  audioClip:
+  - clipName: cheer
+    clip: {fileID: 8300000, guid: b075aa19b55686643979e98a58aa1e6a, type: 3}
+    loop: 0
+    volumeSlider: 1
+    source: {fileID: 0}
+  - clipName: boo
+    clip: {fileID: 8300000, guid: f8a8da4bc14ae2a4399faf5ab9de8913, type: 3}
+    loop: 0
+    volumeSlider: 1
+    source: {fileID: 0}
+  - clipName: throwspalt
+    clip: {fileID: 8300000, guid: 4764c46b765d53c4780ac129d86588e8, type: 3}
+    loop: 0
+    volumeSlider: 1
+    source: {fileID: 0}
+  - clipName: spalt
+    clip: {fileID: 8300000, guid: 1d29cb4751cb3dc49be627607f5c8363, type: 3}
+    loop: 0
+    volumeSlider: 1
+    source: {fileID: 0}
+  - clipName: smack
+    clip: {fileID: 8300000, guid: 953192f74d852724fbdbba9295ca552d, type: 3}
+    loop: 0
+    volumeSlider: 1
+    source: {fileID: 0}
   mute: 0
 --- !u!114 &276607383
 MonoBehaviour:
@@ -221,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curtainAnim: {fileID: 188203694}
+  cheerObjects: {fileID: 159295986}
+  booObjects: {fileID: 0}
 --- !u!114 &276607384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +368,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60a1c82aca927b34084b4875e32142f3, type: 2}
   defeatThreshhold: 3
   wrong: 0
+  cheerObjects: {fileID: 1340475126}
+  booObjects: {fileID: 159295985}
   maxQuestions: 10
 --- !u!4 &276607385
 Transform:
@@ -438,7 +548,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 7.86e-43, y: 0, z: 0, w: -5.950375e+23}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -580,6 +690,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7741351195597916269, guid: 4c01e3aba2191144190a316732a82531,
     type: 3}
   m_PrefabInstance: {fileID: 2104422988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1340475126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1712071793141772621, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1764284270 stripped
 GameObject:

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Question[] questionPool;
     [SerializeField] private int defeatThreshhold = 3;
     [HideInInspector] public int wrong = 0;
+    [SerializeField] private GameObject cheerObjects;
+    [SerializeField] private GameObject booObjects;
 
     //private string[] answers = new string[3];
     private List<string> answers = new List<string>();
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
     {
         animationManager.CurtainOpen();
         randomQuestionsIndex = new int[maxQuestions];
+        cheerObjects.SetActive(false);
+        booObjects.SetActive(false);
     }
 
 
@@ -98,11 +102,16 @@ public class GameManager : MonoBehaviour
         if (tempAnswer == questions[questionIndex].correctAnswer)
         {
             // Play animation
+            audioManager.PlayEfx(0);
             Debug.Log("Correct answer");
+            cheerObjects.SetActive(true);
         }
         else
         {
             // Play animation
+            audioManager.PlayEfx(1);
+            audioManager.PlayEfx(2);
+            booObjects.SetActive(true);
             Debug.Log("Wrong answer");
             ReducePoints();
             uiController.LoseTomatoes();
@@ -117,10 +126,15 @@ public class GameManager : MonoBehaviour
         if (tempAnswer == questions[questionIndex].correctAnswer)
         {
             // Play animation
+            audioManager.PlayEfx(0);
+            cheerObjects.SetActive(true);
         }
         else
         {
             // Play animation
+            audioManager.PlayEfx(1);
+            audioManager.PlayEfx(2);
+            booObjects.SetActive(true);
             ReducePoints();
             uiController.LoseTomatoes();
         }
@@ -134,10 +148,15 @@ public class GameManager : MonoBehaviour
         if (tempAnswer == questions[questionIndex].correctAnswer)
         {
             // Play animation
+            audioManager.PlayEfx(0);
+            cheerObjects.SetActive(true);
         }
         else
         {
             // Play animation
+            audioManager.PlayEfx(1);
+            audioManager.PlayEfx(2);
+            booObjects.SetActive(true);
             ReducePoints();
             uiController.LoseTomatoes();
         }
@@ -156,7 +175,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
             RandomizeAnswers();
             uiController.SetQuizText(questions[questionIndex].joke, answers[0], answers[1], answers[2]);
-        yield return new WaitUntil(() => answered);
+            cheerObjects.SetActive(false);
+            booObjects.SetActive(false);
+            yield return new WaitUntil(() => answered);
            uiController.FillQuiz(questions[questionIndex].joke, tempAnswer);
             // Wait x second, depends on animation duration
             yield return new WaitForSeconds(1);
@@ -181,6 +202,7 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("Playing");
+        audioManager.PlayEfx(0);
         StartCoroutine(StartGameSession());
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     [SerializeField] private Animator curtainAnim;
+    [SerializeField] private Animator cheerObjects;
+    [SerializeField] private Animator booObjects;
 
     private bool curtainsOpen = false;
 
@@ -51,11 +53,25 @@ public class AnimationManager : MonoBehaviour
     void DissapointmentObjects()
     {
         //boos and audience throwing shit in the commedians face
+        StartCoroutine("ThrowBad");
+    }
+
+    IEnumerator ThrowBad()
+    {
+        booObjects.Play("BooItems");
+        yield return new WaitForSeconds(0.50f);
     }
 
     void AppreciationObjects()
     {
         //applause and roses and other shit
+        StartCoroutine("ThrowGood");
+    }
+
+    IEnumerator ThrowGood()
+    {
+        cheerObjects.Play("CheerItems");
+        yield return new WaitForSeconds(2.30f);
     }
 
     void SpeachBubbles()
