@@ -4,9 +4,28 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    void Curtains()
+    [SerializeField] private Animator curtainAnim;
+
+    private bool curtainsOpen = false;
+
+    public void Curtains()
     {
+        if (curtainsOpen == true)
+            curtainsOpen = false;
+        else
+            curtainsOpen = true;
         //add the opening and end curtains
+        StartCoroutine("CurtainStates");
+    }
+
+    IEnumerator CurtainStates()
+    {
+        if(curtainsOpen == false)
+            curtainAnim.Play("CurtainsOpen");
+        if(curtainsOpen == true)
+            curtainAnim.Play("CurtainsClose");
+
+        yield return new WaitForSeconds(0.30f);
     }
 
     void Kick()
