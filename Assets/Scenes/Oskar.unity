@@ -247,6 +247,7 @@ MonoBehaviour:
     loop: 0
     volumeSlider: 0
     source: {fileID: 0}
+  mute: 0
 --- !u!4 &598227064
 Transform:
   m_ObjectHideFlags: 0
