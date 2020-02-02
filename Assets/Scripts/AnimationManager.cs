@@ -8,6 +8,8 @@ public class AnimationManager : MonoBehaviour
 
     private bool curtainsOpen = false;
 
+
+
     public void Curtains()
     {
         if (curtainsOpen == true)
@@ -18,11 +20,24 @@ public class AnimationManager : MonoBehaviour
         StartCoroutine("CurtainStates");
     }
 
+
+    public void CurtainOpen()
+    {
+        curtainAnim.Play("CurtainsOpen");
+    }
+
+
+    public void CurtainClose()
+    {
+        curtainAnim.Play("CurtainsClose");
+    }
+
+
     IEnumerator CurtainStates()
     {
-        if(curtainsOpen == false)
+        if (curtainsOpen == false)
             curtainAnim.Play("CurtainsOpen");
-        if(curtainsOpen == true)
+        if (curtainsOpen == true)
             curtainAnim.Play("CurtainsClose");
 
         yield return new WaitForSeconds(0.30f);
