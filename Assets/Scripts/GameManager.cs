@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject cheerObjects;
     [SerializeField] private GameObject booObjects;
 
+    [SerializeField] private GameObject props;
+
     //private string[] answers = new string[3];
     private List<string> answers = new List<string>();
     private int[] randomQuestionsIndex;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
         randomQuestionsIndex = new int[maxQuestions];
         cheerObjects.SetActive(false);
         booObjects.SetActive(false);
+        props.SetActive(false);
     }
 
 
@@ -234,6 +237,14 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         uiController.MainMenuPanelState();
         uiController.GamePanelState();
+        if (props.activeInHierarchy == true)
+        {
+            props.SetActive(false);
+        }
+        else
+        {
+            props.SetActive(true);
+        }
         yield return new WaitForSeconds(0.5f);
         animationManager.CurtainOpen();
         yield return new WaitForSeconds(0.7f);
@@ -245,6 +256,8 @@ public class GameManager : MonoBehaviour
         // Show ending panel
         animationManager.CurtainClose();
         yield return new WaitForSeconds(0.7f);
+        cheerObjects.SetActive(false);
+        booObjects.SetActive(false);
         uiController.GamePanelState();
         uiController.EndingText(wrong);
         uiController.EndGamePanelState();
@@ -259,6 +272,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         uiController.MainMenuPanelState();
         uiController.EndGamePanelState();
+        props.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         animationManager.CurtainOpen();
         yield return new WaitForSeconds(0.7f);
