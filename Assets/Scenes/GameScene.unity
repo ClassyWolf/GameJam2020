@@ -191,6 +191,9 @@ MonoBehaviour:
   gamePanel: {fileID: 1935279701}
   mainmenuPanel: {fileID: 793060552}
   endgamePanel: {fileID: 715171868}
+  muteImages:
+  - {fileID: 1003173651}
+  - {fileID: 1764284270}
 --- !u!114 &276607382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,9 +569,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1003173651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 637139874, guid: 4c01e3aba2191144190a316732a82531,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104422988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1281278647 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7741351195597916269, guid: 4c01e3aba2191144190a316732a82531,
+    type: 3}
+  m_PrefabInstance: {fileID: 2104422988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1764284270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 610641236, guid: 4c01e3aba2191144190a316732a82531,
     type: 3}
   m_PrefabInstance: {fileID: 2104422988}
   m_PrefabAsset: {fileID: 0}
@@ -760,6 +775,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 276607382}
+    - target: {fileID: 7741351197207192015, guid: 4c01e3aba2191144190a316732a82531,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 276607381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c01e3aba2191144190a316732a82531, type: 3}
 --- !u!1 &2117685649 stripped

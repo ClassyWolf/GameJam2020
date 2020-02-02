@@ -13,9 +13,9 @@ public class UIController : MonoBehaviour
     [SerializeField] GameObject[] endScene;
 
     [SerializeField] TextMeshProUGUI jokeText;
-    [SerializeField] TextMeshProUGUI answerButtonText_1;
-    [SerializeField] TextMeshProUGUI answerButtonText_2;
-    [SerializeField] TextMeshProUGUI answerButtonText_3;
+    public TextMeshProUGUI answerButtonText_1;
+    public TextMeshProUGUI answerButtonText_2;
+    public TextMeshProUGUI answerButtonText_3;
     [SerializeField] private GameObject[] answerButtons;
 
     [SerializeField] private TextMeshProUGUI endingText;
@@ -27,6 +27,8 @@ public class UIController : MonoBehaviour
     [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject mainmenuPanel;
     [SerializeField] GameObject endgamePanel;
+
+    [SerializeField] private GameObject[] muteImages;
 
     void Intro()
     {
@@ -169,6 +171,33 @@ public class UIController : MonoBehaviour
         else
         {
             endgamePanel.SetActive(true);
+        }
+    }
+
+
+    public void EndingText(int wrongAnswers)
+    {
+        if (wrongAnswers == 3)
+        {
+            endingText.text = "You lost! The audience was not happy with your performance.";
+        }
+        else
+        {
+            endingText.text = "You won! The audience was enthralled with your performance.";
+        }
+    }
+
+    public void ChangeMuteImage()
+    {
+        if (muteImages[0].activeInHierarchy == true )
+        {
+            muteImages[0].SetActive(false);
+            muteImages[1].SetActive(true);
+        }
+        else
+        {
+            muteImages[0].SetActive(true);
+            muteImages[1].SetActive(false);
         }
     }
 }

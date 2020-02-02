@@ -92,10 +92,46 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void CheckAnswer()
+    public void CheckAnswer_Button_1()
     {
-        tempAnswer = GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
-        if (tempAnswer == questionPool[randomQuestionsIndex[questionIndex]].correctAnswer)
+        tempAnswer = uiController.answerButtonText_1.GetComponent<TMPro.TextMeshProUGUI>().text;
+        if (tempAnswer == questions[questionIndex].correctAnswer)
+        {
+            // Play animation
+            Debug.Log("Correct answer");
+        }
+        else
+        {
+            // Play animation
+            Debug.Log("Wrong answer");
+            ReducePoints();
+            uiController.LoseTomatoes();
+        }
+        answered = true;
+    }
+
+
+    public void CheckAnswer_Button_2()
+    {
+        tempAnswer = uiController.answerButtonText_2.GetComponent<TMPro.TextMeshProUGUI>().text;
+        if (tempAnswer == questions[questionIndex].correctAnswer)
+        {
+            // Play animation
+        }
+        else
+        {
+            // Play animation
+            ReducePoints();
+            uiController.LoseTomatoes();
+        }
+        answered = true;
+    }
+
+
+    public void CheckAnswer_Button_3()
+    {
+        tempAnswer = uiController.answerButtonText_3.GetComponent<TMPro.TextMeshProUGUI>().text;
+        if (tempAnswer == questions[questionIndex].correctAnswer)
         {
             // Play animation
         }
@@ -188,6 +224,7 @@ public class GameManager : MonoBehaviour
         animationManager.CurtainClose();
         yield return new WaitForSeconds(0.7f);
         uiController.GamePanelState();
+        uiController.EndingText(wrong);
         uiController.EndGamePanelState();
         yield return new WaitForSeconds(0.5f);
         animationManager.CurtainOpen();
