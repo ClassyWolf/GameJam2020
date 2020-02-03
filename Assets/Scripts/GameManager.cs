@@ -114,6 +114,8 @@ public class GameManager : MonoBehaviour
             // Play animation
             audioManager.PlayEfx(1);
             audioManager.PlayEfx(2);
+            audioManager.PlayEfx(3);
+            animationManager.DissapointmentObjects();
             booObjects.SetActive(true);
             Debug.Log("Wrong answer");
             ReducePoints();
@@ -137,6 +139,8 @@ public class GameManager : MonoBehaviour
             // Play animation
             audioManager.PlayEfx(1);
             audioManager.PlayEfx(2);
+            audioManager.PlayEfx(3);
+            animationManager.DissapointmentObjects();
             booObjects.SetActive(true);
             ReducePoints();
             uiController.LoseTomatoes();
@@ -159,6 +163,8 @@ public class GameManager : MonoBehaviour
             // Play animation
             audioManager.PlayEfx(1);
             audioManager.PlayEfx(2);
+            audioManager.PlayEfx(3);
+            animationManager.DissapointmentObjects();
             booObjects.SetActive(true);
             ReducePoints();
             uiController.LoseTomatoes();

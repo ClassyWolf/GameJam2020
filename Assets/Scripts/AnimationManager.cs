@@ -8,6 +8,7 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] private Animator cheerObjects;
     [SerializeField] private Animator booObjects;
     [SerializeField] private Animator charcaterAnim;
+    [SerializeField] private Animator SpalttingTomato;
 
     private bool curtainsOpen = false;
     
@@ -48,10 +49,10 @@ public class AnimationManager : MonoBehaviour
 
     void Kick()
     {
-        charcaterAnim.Play("Kicking");
+        
     }
 
-    void DissapointmentObjects()
+    public void DissapointmentObjects()
     {
         //boos and audience throwing shit in the commedians face
         StartCoroutine("ThrowBad");
@@ -59,8 +60,9 @@ public class AnimationManager : MonoBehaviour
 
     IEnumerator ThrowBad()
     {
-        Kick();
         booObjects.Play("BooItems");
+        SpalttingTomato.Play("Tomato");
+        charcaterAnim.Play("Kicking");
         yield return new WaitForSeconds(0.50f);
     }
 

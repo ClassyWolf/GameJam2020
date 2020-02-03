@@ -212,6 +212,12 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 159295984}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &159656221 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3704195268098074513, guid: 27a0e93cfade6964aa5cf592003647c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 159295984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &188203694 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5629330672456604903, guid: 4c01e3aba2191144190a316732a82531,
@@ -341,6 +347,7 @@ MonoBehaviour:
   cheerObjects: {fileID: 159295986}
   booObjects: {fileID: 159295988}
   charcaterAnim: {fileID: 2041528069}
+  SpalttingTomato: {fileID: 159656221}
 --- !u!114 &276607384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +568,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.86e-43, y: 0, z: 0, w: -5.950375e+23}
+  m_BoundingSphereOverride: {x: 0, y: 1.25, z: 1e-45, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
